@@ -1,0 +1,367 @@
+{
+	"destination": "detailScreen",
+	"windowSizingX": "fixed",
+	"windowSizingY": "fixed",
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"menuBar": "Menu Bar #1",
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onTimer",
+		"onPageChange"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "842pt",
+		"paperHeight": "595pt"
+	},
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	},
+	"pages": [
+		{
+			"objects": {
+				"Tab Control": {
+					"type": "tab",
+					"top": 22,
+					"left": 23,
+					"width": 1027,
+					"height": 856,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"dataSource": "_TabTitles",
+					"dataSourceTypeHint": "arrayText",
+					"action": "gotoPage",
+					"events": [
+						"onClick"
+					]
+				}
+			}
+		},
+		{
+			"objects": {
+				"information": {
+					"type": "input",
+					"top": 119,
+					"left": 51,
+					"width": 966,
+					"height": 720,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"dataSource": "Infos[0].Description",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"styledText": true,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				}
+			}
+		},
+		{
+			"objects": {
+				"Hierarchical List": {
+					"type": "list",
+					"left": 29,
+					"top": 95,
+					"width": 287,
+					"height": 752,
+					"events": [
+						"onSelectionChange"
+					],
+					"method": "ObjectMethods/Hierarchical List.4dm",
+					"dataSource": "Form:C1466.labels.listRef",
+					"dropping": "automatic"
+				},
+				"Spinner1": {
+					"type": "spinner",
+					"left": 39,
+					"top": 356,
+					"width": 248,
+					"height": 182,
+					"visibility": "hidden",
+					"dataSource": "Form:C1466.spinner"
+				},
+				"Button1": {
+					"type": "button",
+					"text": "",
+					"top": 47,
+					"left": 29,
+					"width": 184,
+					"height": 44,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Button1.4dm",
+					"style": "regular",
+					"icon": "/RESOURCES/btn_google_signin_light_normal_web.png",
+					"customBackgroundPicture": "/RESOURCES/btn_google_signin_light_focus_web.png",
+					"imageHugsTitle": false,
+					"textPlacement": "center"
+				},
+				"information2": {
+					"type": "input",
+					"top": 857,
+					"left": 92,
+					"width": 950,
+					"height": 16,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"dataSource": "Infos[2].Description",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"styledText": true,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onClick"
+					],
+					"textAlign": "right",
+					"method": "ObjectMethods/information2.4dm"
+				},
+				"information1": {
+					"type": "input",
+					"top": 97,
+					"left": 330,
+					"width": 688,
+					"height": 192,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"dataSource": "Infos[1].Description",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"styledText": true,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Text1": {
+					"type": "text",
+					"text": "name:",
+					"top": 362,
+					"left": 499,
+					"width": 115,
+					"height": 15,
+					"textAlign": "right"
+				},
+				"Text2": {
+					"type": "text",
+					"text": "Message List Visibility:",
+					"top": 407,
+					"left": 475,
+					"width": 139,
+					"height": 15,
+					"textAlign": "right"
+				},
+				"Text4": {
+					"type": "text",
+					"text": "Text Color:",
+					"top": 455,
+					"left": 460,
+					"width": 154,
+					"height": 15,
+					"textAlign": "right"
+				},
+				"Text5": {
+					"type": "text",
+					"text": "Background Color:",
+					"top": 506,
+					"left": 452,
+					"width": 162,
+					"height": 15,
+					"textAlign": "right"
+				},
+				"Text6": {
+					"type": "text",
+					"text": "Messages Total:",
+					"top": 555,
+					"left": 416,
+					"width": 198,
+					"height": 15,
+					"textAlign": "right"
+				},
+				"Text7": {
+					"type": "text",
+					"text": "Message Unread:",
+					"top": 602,
+					"left": 488,
+					"width": 126,
+					"height": 15,
+					"textAlign": "right"
+				},
+				"LabelName": {
+					"type": "input",
+					"left": 631,
+					"top": 361,
+					"width": 248,
+					"height": 16,
+					"dataSource": "Form:C1466.currentLabel.name"
+				},
+				"MessageListVisible": {
+					"type": "checkbox",
+					"text": "",
+					"top": 408,
+					"left": 631,
+					"width": 25,
+					"height": 13,
+					"events": [
+						"onClick"
+					],
+					"dataSource": "Form:C1466.currentLabel.messageListVisible",
+					"dataSourceTypeHint": "boolean"
+				},
+				"Input2": {
+					"type": "input",
+					"left": 631,
+					"top": 554,
+					"width": 62,
+					"height": 16,
+					"dataSource": "Form:C1466.currentLabel.messagesTotal",
+					"enterable": false,
+					"focusable": false,
+					"contextMenu": "none"
+				},
+				"Input3": {
+					"type": "input",
+					"left": 631,
+					"top": 601,
+					"width": 62,
+					"height": 16,
+					"dataSource": "Form:C1466.currentLabel.messagesUnread",
+					"enterable": false,
+					"focusable": false,
+					"contextMenu": "none"
+				},
+				"TextColor": {
+					"type": "picturePopup",
+					"left": 631,
+					"top": 452,
+					"width": 20,
+					"height": 20,
+					"events": [
+						"onValidate",
+						"onClick"
+					],
+					"picture": "/RESOURCES/colors.png",
+					"columnCount": 9,
+					"rowCount": 12,
+					"dataSource": "Form:C1466.textColor",
+					"borderStyle": "solid",
+					"method": "ObjectMethods/TextColor.4dm"
+				},
+				"BackgroundColor": {
+					"type": "picturePopup",
+					"left": 631,
+					"top": 503,
+					"width": 20,
+					"height": 20,
+					"events": [
+						"onClick"
+					],
+					"picture": "/RESOURCES/colors.png",
+					"columnCount": 9,
+					"rowCount": 12,
+					"dataSource": "Form:C1466.backgroundColor",
+					"borderStyle": "solid",
+					"method": "ObjectMethods/BackgroundColor.4dm"
+				},
+				"Button": {
+					"type": "button",
+					"text": "Update",
+					"top": 689,
+					"left": 723,
+					"width": 157,
+					"height": 30,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Button.4dm"
+				},
+				"Button2": {
+					"type": "button",
+					"text": "Create",
+					"top": 534,
+					"left": 723,
+					"width": 157,
+					"height": 30,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Button2.4dm"
+				},
+				"Button3": {
+					"type": "button",
+					"text": "New label",
+					"top": 310,
+					"left": 772,
+					"width": 108,
+					"height": 26,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Button3.4dm"
+				},
+				"Text3": {
+					"type": "text",
+					"text": "Type:",
+					"top": 650,
+					"left": 488,
+					"width": 126,
+					"height": 15,
+					"textAlign": "right"
+				},
+				"Input1": {
+					"type": "input",
+					"left": 631,
+					"top": 649,
+					"width": 62,
+					"height": 16,
+					"dataSource": "Form:C1466.currentLabel.type",
+					"enterable": false,
+					"focusable": false,
+					"contextMenu": "none"
+				},
+				"labelPicture": {
+					"type": "input",
+					"left": 723,
+					"top": 482,
+					"width": 306,
+					"height": 32,
+					"dataSourceTypeHint": "picture",
+					"dataSource": "Form:C1466.labelPicture",
+					"pictureFormat": "truncatedTopLeft",
+					"hideFocusRing": true,
+					"fill": "transparent",
+					"borderStyle": "none"
+				}
+			}
+		}
+	],
+	"geometryStamp": 1109,
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {}
+		}
+	}
+}
