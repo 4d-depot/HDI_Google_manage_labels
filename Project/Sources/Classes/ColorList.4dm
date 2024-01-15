@@ -13,3 +13,4 @@ Function getHexa($id : Integer) : Text
 Function getIndex($hexa : Text) : Integer
 	
 	return This:C1470.colors.indexOf($hexa)+1
+	

@@ -17,5 +17,8 @@ CALL FORM:C1391($winRef; Formula:C1597(Form:C1466.OAuth2Provider:=$OAuth2Provide
 // Set the label list in the main process
 CALL FORM:C1391($winRef; Formula:C1597(Form:C1466.labels:=$list))
 
+// enable the "new" button
+CALL FORM:C1391($winRef; Formula:C1597(OBJECT SET ENABLED:C1123(*; "Button3"; True:C214)))  // new button
+
 // Hide the spinner
 CALL FORM:C1391($winRef; Formula:C1597(OBJECT SET VISIBLE:C603(*; "Spinner1"; False:C215)))

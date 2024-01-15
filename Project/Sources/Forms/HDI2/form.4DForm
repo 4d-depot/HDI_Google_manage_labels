@@ -156,7 +156,7 @@
 				},
 				"Text1": {
 					"type": "text",
-					"text": "name:",
+					"text": "Name:",
 					"top": 362,
 					"left": 499,
 					"width": 115,
@@ -251,39 +251,6 @@
 					"focusable": false,
 					"contextMenu": "none"
 				},
-				"TextColor": {
-					"type": "picturePopup",
-					"left": 631,
-					"top": 452,
-					"width": 20,
-					"height": 20,
-					"events": [
-						"onValidate",
-						"onClick"
-					],
-					"picture": "/RESOURCES/colors.png",
-					"columnCount": 9,
-					"rowCount": 12,
-					"dataSource": "Form:C1466.textColor",
-					"borderStyle": "solid",
-					"method": "ObjectMethods/TextColor.4dm"
-				},
-				"BackgroundColor": {
-					"type": "picturePopup",
-					"left": 631,
-					"top": 503,
-					"width": 20,
-					"height": 20,
-					"events": [
-						"onClick"
-					],
-					"picture": "/RESOURCES/colors.png",
-					"columnCount": 9,
-					"rowCount": 12,
-					"dataSource": "Form:C1466.backgroundColor",
-					"borderStyle": "solid",
-					"method": "ObjectMethods/BackgroundColor.4dm"
-				},
 				"Button": {
 					"type": "button",
 					"text": "Update",
@@ -352,11 +319,47 @@
 					"hideFocusRing": true,
 					"fill": "transparent",
 					"borderStyle": "none"
+				},
+				"TextColor": {
+					"type": "input",
+					"left": 631,
+					"top": 454,
+					"width": 16,
+					"height": 16,
+					"dataSourceTypeHint": "picture",
+					"dataSource": "Form:C1466.textColorPicture",
+					"fill": "transparent",
+					"pictureFormat": "proportionalCenter",
+					"enterable": false,
+					"focusable": false,
+					"contextMenu": "none",
+					"method": "ObjectMethods/TextColor.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"BackgroundColor": {
+					"type": "input",
+					"left": 631,
+					"top": 505,
+					"width": 16,
+					"height": 16,
+					"dataSourceTypeHint": "picture",
+					"dataSource": "Form:C1466.backgroundColorPicture",
+					"fill": "transparent",
+					"pictureFormat": "proportionalCenter",
+					"enterable": false,
+					"focusable": false,
+					"contextMenu": "none",
+					"method": "ObjectMethods/BackgroundColor.4dm",
+					"events": [
+						"onClick"
+					]
 				}
 			}
 		}
 	],
-	"geometryStamp": 1109,
+	"geometryStamp": 1146,
 	"editor": {
 		"activeView": "View 1",
 		"defaultView": "View 1",

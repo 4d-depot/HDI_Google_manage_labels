@@ -12,6 +12,11 @@ If (Form:C1466.status.success)
 	CALL WORKER:C1389("myWorker"; Formula:C1597(GetLabels); Form:C1466.OAuth2Provider; Current form window:C827)
 	
 	ALERT:C41("Label udpated")
+	
+	NewLabelInit
+	CreationObjectsState(True:C214)
+	UpdateMode(False:C215)
+	
 Else 
 	ALERT:C41("Error: "+String:C10(Form:C1466.status.statusText))
 End if 

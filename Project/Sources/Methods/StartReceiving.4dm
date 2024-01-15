@@ -20,25 +20,29 @@ If (Is a list:C621(Form:C1466.labels.listRef))
 		Form:C1466.currentLabel:=cs:C1710.NetKit.Google.new(Form:C1466.OAuth2Provider).mail.getLabel($currentItem.id)
 		// display the modification mode
 		If (Form:C1466.currentLabel#Null:C1517)
-			Form:C1466.textColor:=cs:C1710.ColorList.new().getIndex(String:C10(Form:C1466.currentLabel.color.textColor))
-			Form:C1466.backgroundColor:=cs:C1710.ColorList.new().getIndex(String:C10(Form:C1466.currentLabel.color.backgroundColor))
+			var $colorList:=cs:C1710.ColorList.new()
+			Form:C1466.textColor:=$colorList.getIndex(String:C10(Form:C1466.currentLabel.color.textColor))
+			Form:C1466.backgroundColor:=$colorList.getIndex(String:C10(Form:C1466.currentLabel.color.backgroundColor))
 			
 			Form:C1466.currentLabel.messageListVisible:=String:C10(Form:C1466.currentLabel.messageListVisibility)="hide" ? False:C215 : True:C214
 			
 			UpdateMode(True:C214)
 			// if it is a system label, the modification is forbidden
 			If (Form:C1466.currentLabel.type="system")
-				EnableObject(False:C215)
+				CreationObjectsState(False:C215)
 				Form:C1466.labelPicture:=Null:C1517
 			Else 
-				EnableObject(True:C214)
-				var $colorList:=cs:C1710.ColorList.new()
-				Form:C1466.labelPicture:=CreateLabelPicture(Form:C1466.currentLabel.name; $colorList.getHexa(Form:C1466.backgroundColor); $colorList.getHexa(Form:C1466.textColor))
+				CreationObjectsState(True:C214)
+				
+				var $svg:=cs:C1710.SVGCreator.new()
+				Form:C1466.labelPicture:=$svg.rectangle(Form:C1466.currentLabel.name; $colorList.getHexa(Form:C1466.backgroundColor); $colorList.getHexa(Form:C1466.textColor))
+				Form:C1466.textColorPicture:=$svg.icon($colorList.getHexa(Form:C1466.textColor); $colorList.getHexa(Form:C1466.textColor))
+				Form:C1466.backgroundColorPicture:=$svg.icon($colorList.getHexa(Form:C1466.backgroundColor); $colorList.getHexa(Form:C1466.backgroundColor))
 			End if 
 		Else 
 			// if the label is not found, display creation mode
 			NewLabelInit
-			EnableObject(True:C214)
+			CreationObjectsState(True:C214)
 			UpdateMode(False:C215)
 		End if 
 		

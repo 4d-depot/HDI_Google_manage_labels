@@ -9,5 +9,3 @@ OBJECT SET ENABLED:C1123(*; "TextColor"; $enable)
 OBJECT SET ENABLED:C1123(*; "BackgroundColor"; $enable)
 OBJECT SET ENABLED:C1123(*; "labelPicture"; $enable)
 OBJECT SET ENABLED:C1123(*; "MessageListVisible"; $enable)
-
-OBJECT SET VISIBLE:C603(*; "Button"; $enable)  // update button

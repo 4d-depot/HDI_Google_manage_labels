@@ -6,3 +6,5 @@ Form:C1466.currentLabel.messageListVisible:=True:C214
 Form:C1466.textColor:=0
 Form:C1466.backgroundColor:=0
 Form:C1466.labelPicture:=Null:C1517
+Form:C1466.textColorPicture:=Null:C1517
+Form:C1466.backgroundColorPicture:=Null:C1517
